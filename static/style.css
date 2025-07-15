@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 150px;
+}
+
+.card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+button {
+    padding: 12px;
+    background-color: #ef394e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #d9303e;
+}
+
+.msg {
+    margin-top: 15px;
+    background: #ffd;
+    padding: 10px;
+    border: 1px solid #ffa;
+    color: #333;
+    border-radius: 6px;
+}
+
+.flag-box {
+    margin-top: 20px;
+    background: #1e1e1e;
+    color: #0f0;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: monospace;
+    text-align: center;
+}

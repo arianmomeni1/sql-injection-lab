@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ورود به حساب</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="https://www.digikala.com/statics/img/svg/logo.svg" class="logo">
+    <div class="card">
+      <h2>ورود به حساب کاربری</h2>
+      <form method="POST">
+        <label>نام کاربری</label>
+        <input type="text" name="username" required>
+        <label>رمز عبور</label>
+        <input type="text" name="password" required>
+        <button type="submit">ورود</button>
+      </form>
+      {% if message %}
+        <div class="msg">{{ message }}</div>
+      {% endif %}
+      {% if flag %}
+        <div class="flag-box">🎉 فلگ شما: <strong>{{ flag }}</strong></div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
