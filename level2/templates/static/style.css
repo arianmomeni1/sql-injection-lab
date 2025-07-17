@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    background-color: #101010;
+    color: #eee;
+    padding: 30px;
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.products {
+    margin-top: 30px;
+}
+
+.product {
+    border: 1px solid #444;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #1a1a1a;
+}
