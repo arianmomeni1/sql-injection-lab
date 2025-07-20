@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f0f0f0;
+            padding: 40px 20px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00ffe7;
+            text-shadow: 0 0 10px #00ffe7aa, 0 0 20px #00ffe7bb;
+            animation: glow 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00ffe7aa, 0 0 20px #00ffe7bb;
+            }
+            to {
+                text-shadow: 0 0 30px #00ffe7ff, 0 0 50px #00ffe7ff;
+            }
+        }
+
+        .product {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px 30px;
+            margin-bottom: 25px;
+            box-shadow:
+                0 8px 16px rgba(0, 255, 231, 0.2),
+                inset 0 0 10px rgba(0, 255, 231, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid #00ffe7;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow:
+                0 12px 30px rgba(0, 255, 231, 0.6),
+                inset 0 0 15px rgba(0, 255, 231, 0.8);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .product strong {
+            font-size: 1.5rem;
+            letter-spacing: 0.7px;
+            color: #00ffe7;
+        }
+
+        .product span {
+            float: right;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #fff;
+            background: linear-gradient(90deg, #00ffe7, #00b6ff);
+            padding: 4px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px #00b6ff88;
+            user-select: none;
+        }
+
+        /* جایگزین قیمت برای زیبایی */
+        .product .price {
+            float: right;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #fff;
+            background: linear-gradient(90deg, #00ffe7, #00b6ff);
+            padding: 6px 16px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px #00b6ffbb;
+            user-select: none;
+        }
+
+        /* وقتی هیچ محصولی نیست */
+        p {
+            font-size: 1.2rem;
+            color: #aaa;
+            font-style: italic;
+            margin-top: 50px;
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 520px) {
+            body {
+                padding: 30px 10px;
+            }
+            .product {
+                padding: 16px 20px;
+                max-width: 100%;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Product List</h2>
+    {% if products %}
+        {% for name, price in products %}
+            <div class="product">
+                <strong>{{ name }}</strong>
+                <span class="price">{{ price }}$</span>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No product found.</p>
+    {% endif %}
+</body>
+</html>
