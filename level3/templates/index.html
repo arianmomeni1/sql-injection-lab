@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blind SQLi Lab - Level 3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background: #121212;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #00ff99;
+            text-shadow: 0 0 8px #00ff99;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            padding: 12px 15px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: 2px solid #00ff99;
+            background: #222;
+            color: #eee;
+            outline: none;
+            transition: border-color 0.3s ease;
+            width: 250px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #00ffaa;
+            box-shadow: 0 0 10px #00ffaa;
+        }
+
+        button {
+            background: #00ff99;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            color: #121212;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 0 8px #00ff99;
+        }
+
+        button:hover {
+            background: #00cc77;
+            box-shadow: 0 0 12px #00cc77;
+        }
+
+        p {
+            font-size: 1.2rem;
+            min-height: 1.5em;
+            color: #ff5555;
+            text-shadow: 0 0 5px #ff5555;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .footer-logo {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            user-select: none;
+            pointer-events: none; 
+            opacity: 0.8;
+            filter: drop-shadow(0 0 4px #00ff99);
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateX(-50%) translateY(0);
+                filter: drop-shadow(0 0 4px #00ff99);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-6px);
+                filter: drop-shadow(0 0 10px #00ff99);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Check if username exists</h2>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" autocomplete="off" />
+        <button type="submit">Submit</button>
+    </form>
+    <p>{{ message }}</p>
+
+
+    <div class="footer-logo" aria-label="Hack Logo" title="Hack Logo">
+        <img src="../static/pasarguard-lab.png" alt="">
+    </div>
+</body>
+</html>
